@@ -1,6 +1,6 @@
 OptionValue.class_eval do
 
-  default_scope order(:position)
+  default_scope order(:position) if table_exists?(:option_values)
     
   if defined?(SpreeHeroku)
     has_attached_file :image, 
